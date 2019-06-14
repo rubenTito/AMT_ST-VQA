@@ -1,3 +1,4 @@
+/* =============== Page scheme =============== */
 .gridContainer
 {
     display: grid;
@@ -20,69 +21,11 @@
 
 #qaImage
 {
-	left:0px;
-    top:0px;
-    /*width: 100%;
-    height: 100%;*/
+	left:0;
+    top:0;
     z-index:-1;
 }
 
-#hideShowBBButton {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    width: 10%;
-    white-space: normal;
-}
-
-.rectangle
-{
-	left: 0;
-    top: 0;
-    margin: 0 0 0 0;
-    position: absolute;
-    z-index: 1;
-}
-
-/*#headerPanel {
-    float: left;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    display: flex;
-    background: #0088ff;
-    overflow: auto;
-}
-.wordsDiv
-{
-    margin-left: 15px;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    display: block;
-    background: #00ffff;
-    overflow: auto;
-}
-.wordsDiv button {
-    width: auto;
-    margin: 10px 5px 10px 5px; //Top and bottom 10px; Left and right auto
-    padding: 10px 10px 10px 10px;
-    float: left;
-    border-width: 0;
-    outline: none;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-    background-color: #2ecc71;
-    color: #ecf0f1;
-    border-radius: 1px;
-}
-.wordsDiv .selected {
-    color: red;
-}
-*/
 
 #formDiv
 {
@@ -90,215 +33,64 @@
     width: 97%;
     margin-top: 3%;
     margin-left: 3%;
-    /*height: 100%;*/
-    /*display: none;*/
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 2;
     grid-column-end: 3;
     display: grid;
-    /*grid-template-columns: 100%;*/
-    /*background: blue;*/
 }
 
-#formHeadDiv
+
+/* =============== Form Style =============== */
+#questionDiv
 {
     background: orange;
     grid-row-start: 1;
     grid-row-end: 2;
+    width: 100%;
+    padding: 10px 0 10px 0;
     font-weight: bold;
 }
 
-.questionText
+#question
 {
-    width: 90%;
-    margin: 1% 2% auto 3%;
+    margin-left: 10px;
 }
 
-.answerText
+#answerDiv
 {
-    width: 90%;
-    margin: 1% 5% auto 1%;
-}
-
-.checkboxText
-{
-    width: 90%;
-    margin: 1% 5% auto 1%;
-}
-
-#QADiv
-{
-    float: left;
-    width: 100%;
-    display: grid;
+    background: lightskyblue;
     grid-row-start: 2;
     grid-row-end: 3;
-    /*background: blue;*/
-    overflow: auto;
-    /*margin-left: 10px;*/
-    margin-bottom: 0;
+    width: 100%;
+    padding: 10px 0 10px 0;
 }
 
-.QADivRow
+#answer
 {
-    float: left;
-    display: flex;
-    background: grey;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-#unanswerableDiv {
-    margin: 10px 10px 10px 10px;
-
-}
-
-.radioInputRow
-{
-    display: block;
-    margin-bottom: 3px;
-
-    color: white;
-    font-weight: bold;
-}
-
-.radioOptionDiv {
-    display: flex;
-}
-
-
-
-.radioYesNo
-{
-    margin: 0 5px 0 20px !important;
-}
-
-.radioQuestion
-{
-    margin: 0 5px 0 10px;
-}
-
-.radioText
-{
-    margin: 0 0 0 0;
-}
-
-#mainInstructionsDiv ul li{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.428571429;
-}
-
-/*#QADiv0 {
-    display: flex;
-}*/
-
-/*.acceptButton
-{
-    display: none;
-}*/
-
-.questionInputDiv
-{
-    width: 30%;
-}
-
-.questionInput
-{
-    width: 90%;
-    height: 100%;
-    margin: 1% 2% auto 3%;
-}
-
-.answerInputDiv
-{
-    width: 25%;
-}
-
-.answerInputOri
-{
-    width: 90%;
-    height: 100%;
-    margin: 1% 5% auto auto;
-}
-
-.answerInputVeri
-{
-    width: 90%;
-    height: 100%;
-    margin: 1% 5% auto auto;
-}
-
-.checkBoxesInputDiv {
-    display: block;
-    height: 100%;
-    width: 20%;
-}
-
-.answerCheckBox input {
-    margin-top: 13.75%;
-    margin-bottom: 13.75%;
-}
-
-.answerCheckBox p {
-    margin-top: 13.75%;
-    margin-bottom: 13.75%;
-}
-
-.verifCheckBox input {
-    margin-top: 13.75%;
-    margin-bottom: 13.75%;
-}
-
-.verifCheckBox p {
-    margin-top: 13.75%;
-    margin-bottom: 13.75%;
-}
-
-.answerCheckBoxDiv {
-    display: flex;
-    height: 33%;
-}
-.verifCheckBoxDiv {
-    display: flex;
-    height: 33%;
-}
-.notSureCheckBoxDiv {
-    display: flex;
-    height: 33%;
-}
-
-.selectBBButton {
-
-}
-
-.acceptSelBBButton {
-    display: none;
-}
-
-.editSelBBButton {
-    display: none;
+    margin-left: 10px;
+    width: 33%
 }
 
 #formGeneralButtonDiv
 {
-    padding-top: 30px;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    /*background: red;*/
+    padding-top: 10px;
+    grid-row-start: 3;
+    grid-row-end: 4;
     background: grey;
     padding-bottom: 1%;
 }
 
-/*
-.formGeneralButton
-{
-    grid-row-start: 4;
-    grid-row-end: 5;
-}*/
+#submitButton{
+    border-radius: 12px;
+    padding: 10px 20px;
+    white-space: normal;
+    margin: 1% auto auto 5%;
+}
 
-/*Instructions style*/
+
+
+/* =============== Instructions style  =============== */
 #instructionsDiv
 {
     grid-row-start: 1;
@@ -314,34 +106,11 @@
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 3;
-    width: 75%;
+    width: 80%;
+    padding: 1% 4%;
     margin: 0 auto;
-    /*background: #58d9fc;*/
-    background: #b4b4b4;
-    padding: 10px;
+    background: lightgrey;
     border-radius: 5px;
-}
-
-#example1
-{
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    width: 80%;
-    margin: 0 auto;
-    background: cyan;
-}
-
-#example2
-{
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    width: 80%;
-    margin: 0 auto;
-    background: magenta;
 }
 
 .redText
@@ -364,54 +133,4 @@
 .italicText
 {
     font-style: italic;
-}
-
-
-#x{
-    display: flex;
-}
-
-#collapseTrigger{
-  color:#fff;
-  display: block;
-  text-decoration: none;
-}
-
-#submitButton{
-  white-space: normal;
-  margin: 1% auto auto 5%;
-}
-
-
-
-/* Instructions style */
-.image{
-  margin-bottom: 15px;
-}
-
-.panel-body {
-    background-color: white;
-    position: absolute;
-    border-color: #428bca;
-    border-style: solid;
-    border-radius: 10px;
-    box-shadow: none;
-}
-
-#instructionsPanel1 {
-    margin-top: 15px;
-}
-
-#instructionBody1 {
-    margin: 100px;
-    z-index: 1001;
-}
-
-#instructionBody2 {
-    z-index: 1000;
-}
-
-.panel-primary {
-    border: none;
-    box-shadow: none;
 }

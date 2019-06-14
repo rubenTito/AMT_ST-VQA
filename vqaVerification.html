@@ -1,17 +1,17 @@
-<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+<!--<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">-->
 <HTMLContent>
 
 <!-- YOUR HTML BEGINS -->
 <!DOCTYPE html>
 <html>
 <head>
+	<title>ST-VQA</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
 
 	<script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
 
 	<link rel="stylesheet" type="text/css" href="vqaStyle.css">
-	<!-- <link rel="stylesheet" type="text/css" href="https://rawgit.com/furkanbiten/TestRepository/master/vqaStyle.css"> -->
-
+<!--	<link href="https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/master/vqaStyle.css" rel="stylesheet" type="text/css">-->
 </head>
 
 <body>
@@ -33,7 +33,7 @@
 		<!-- End instructions -->
 
 		<div id="qaImageDiv">
-			<img id="qaImage" class="qaImage" src="" >
+			<img id="qaImage" class="qaImage" src="">
 		</div>
 
 		<div id="formDiv">
@@ -42,65 +42,14 @@
 
 				<input type='hidden' value='' name='assignmentId' id='assignmentId'>
 
-				<div id="QADiv">
-					<div id="formHeadDiv" class="QADivRow">
-						<div class="questionInputDiv">
-							<p id="questionText" class="questionInput">Question:</p>
-						</div>
-
-						<div class="answerInputDiv">
-							<p id="answerText" class="answerText">Answer:</p>
-						</div>
-					</div>
-
-					<div id="QADiv0" class="QADivRow">
-						<div class="questionInputDiv">
-							<textarea rows="3" id="question0" type="text" name="question0" class="questionInput" disabled spellcheck="true" lang="en" placeholder='Type your question'> </textarea>
-						</div>
-
-						<div class="answerInputDiv">
-							<input id="answer0" name="answer0" class="answerInput" spellcheck="true" lang="en" placeholder='Type the answer'type="text">
-						</div>
-					</div>
-
-					<div id="QADiv1" class="QADivRow">
-						<div class="questionInputDiv">
-							<textarea rows="3" id="question1" type="text" name="question1" class="questionInput" disabled spellcheck="true" lang="en" placeholder='Type your question'> </textarea>
-						</div>
-
-						<div class="answerInputDiv">
-							<input id="answer1" name="answer1" class="answerInput" spellcheck="true" lang="en" placeholder='Type the answer'type="text">
-						</div>
-					</div>
-
-					<div id="QADiv2" class="QADivRow">
-						<div class="questionInputDiv">
-							<textarea rows="3" id="question2" type="text" name="question2" class="questionInput" disabled spellcheck="true" lang="en" placeholder='Type your question'> </textarea>
-						</div>
-
-						<div class="answerInputDiv">
-							<input id="answer2" name="answer2" class="answerInput" spellcheck="true" lang="en" placeholder='Type the answer'type="text">
-						</div>
-					</div>
-
-					<div id="unanswerableDiv" class="radioInputRow">
-						<p class="radioQuestion">Do you think there are no possible questions to be asked for the text found in the image?</p>
-						<div class="radioOptionDiv">
-							<input class="radioYesNo" type="radio" name="canBeQAed" value="No">
-							<p class="radioText"> Yes, there are no possible questions.</p>
-						</div>
-						<div class="radioOptionDiv">
-							<input class="radioYesNo" type="radio" name="canBeQAed" value="Yes">
-							<p class="radioText"> No, there are possible questions to be asked.</p>
-						</div>
-					</div>
+				<div id="QuestionDiv" class="questionDiv">
+					<p id="question" class="question"></p>
+				</div>
+				<div id="AnswerDiv" class="answerDiv">
+					<input id="answer" name="answer" class="answerInput" spellcheck="true" lang="en" placeholder='Type the answer'type="text">
 				</div>
 
-
-
 				<div id="formGeneralButtonDiv">
-					<!-- <input type="button" id="addQA" class="formGeneralButton" onclick="setNewQA();" value="Add new Q/A"> -->
-
 					<input type='submit' id='submitButton' class="formGeneralButton" value='Submit'>
 				</div>
 			</form>
@@ -110,29 +59,14 @@
 	</div>
 
 
-	<!--<script src="jquery-3.3.1.min.js"></script>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-	<!-- Development -->
-	<!--<script src="svg.min.js"></script>-->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.1/svg.min.js"></script>
 
-	<!-- Production -->
-	<!--<script type="text/javascript" src="https://cdn.rawgit.com/furkanbiten/TestRepository/master/svg.min.js"></script>-->
-
 	<script type="text/javascript">
-		maxQA = 2; //3: 0 --> 2
-		splitSymbol = "_____";
+		jsonUrl = "https://raw.githubusercontent.com/rubenTito/AMT_ST-VQA/master/data/st-vqa_ambiguity_experiment_data.json";
+		question_id = "${question_id}";
+		question_id = "24073";
 
-		//jsonUrl = "X.json";
-		jsonUrl = "https://rawgit.com/furkanbiten/TestRepository/master/Task3/X.json";
-		//hitId = "${HITId}";
-		//hitId = "3IZPORCT1E8AIFTDXD1A76HNXZ8HR7";
-		//hitId = "3FK4G712NWZB9376NWDE1UTLSCBSSU";
-		//hitId = "3EGKVCRQFVR9O32DBGJ8TR7M58FBYI";
-		//hitId = "3ATYLI1PRS13C8WNTLNRPOSXZ3ROJ7";
-		//hitId = "3GVPRXWRPGT0WRKIUHLP21R2W017IZ"
-		hitId = "3EFNPKWBMRN7OD2FOFTTJGFQ54T03N";
 		originalBBSizes = new Map();
 		originalWidth = -1;
 		originalHeight = -1;
@@ -140,12 +74,13 @@
 
 	<!-- ========================= FORM FUNCTIONS ========================= -->
 
+	<script type="text/javascript" src="scripts/instructionsFunctions.js"></script>
 	<script type="text/javascript" src="scripts/formFunctions.js"></script>
-	<!--<script type="text/javascript" src="https://rawgit.com/furkanbiten/TestRepository/master/Task3/scripts/formFunctions.js"></script> -->
-
-
 	<script type="text/javascript" src="scripts/drawFunctions.js"></script>
-<!--	<script type="text/javascript" src="https://rawgit.com/furkanbiten/TestRepository/master/scripts/drawFunctions.js"></script> -->
+
+<!--	<script src="https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/master/scripts/instructionsFunctions.js"></script>-->
+<!--	<script src="https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/master/scripts/scripts/formFunctions.js"></script>-->
+<!--	<script src="https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/master/scripts/scripts/drawFunctions.js"></script>-->
 
 	<script>
 		function parseJsonDataToMap() {
@@ -162,22 +97,24 @@
 				};
 			}
 			//Read the image and bounding boxes from JSON file.
-			var m = new Map();
+			let m = new Map();
 			$.getJSON(jsonUrl, function( data ) {
-				entries = Object.entries(data);
+				let entries = Object.entries(data);
 				m = new Map(entries);
-				if (m.size == 0) {
-					for (var i=0; i < entries.length; i++) {
-						imgName = entries[i][0];
-						boundingBoxes = entries[i][1];
+				if (m.size === 0) {
+					for (let i=0; i < entries.length; i++) {
+						let imgName = entries[i][0];
+						let boundingBoxes = entries[i][1];
 						m.set(imgName, boundingBoxes);
 					}
 				}
-				hitInfo = m.get(hitId);
-				plotImage(hitInfo.img_url);
-				fillQAs(hitInfo.Answer);
+				console.log(m);
+				let qa = m.get(question_id);
+				plotImage(qa.file_path);
+				$("#question").text(qa.question);
+				// $("#question").text("bla bla blabla blab labal ads ajasf jdkalknlkjnkads adsf jdskjdfnajkdnk jan akjn aklsjdn lkaj nakl nkladjnakljdnakj sdkj nfakdj najdk nfakldnkajlfn wkj.");
 			});
-		};
+		}
 	</script>
 
 	<!-- ========================= MAIN FUNCTION ========================= -->
@@ -204,37 +141,39 @@
 		});
 	</script>-->
 
-<!--	<script type="text/javascript" src="scripts/instructionsFunctions.js"></script>-->
-	<script type="text/javascript" src="https://raw.githubusercontent.com/furkanbiten/TestRepository/master/scripts/instructionsFunctions.js"></script>
-
 
 	<!-- ========================= RESIZE FUNCTION ========================= -->
 	<script>
 		$( window ).resize(function() {
 			//Get new image size
-			qaImage = document.getElementById("qaImage");
-			newImageWidth = qaImage.width;
-			newImageHeight = qaImage.height;
+			let qaImage = document.getElementById("qaImage");
+			let newImageWidth = qaImage.width;
+			let newImageHeight = qaImage.height;
+
 			//Get all bounding boxes divs.
-			var boundingBoxes = document.getElementsByClassName("rectangle");
-			for (i=0; i<boundingBoxes.length; i++) {
+			let boundingBoxes = document.getElementsByClassName("rectangle");
+			for (let i=0; i<boundingBoxes.length; i++) {
 				//SVG IDs
-				rectId = boundingBoxes[i].id + "Rect";
+				let rectId = boundingBoxes[i].id + "Rect";
+
 				//New div positions.
-				newXPos = originalBBSizes.get(rectId)[0] * newImageWidth / originalWidth;
-				newYPos = originalBBSizes.get(rectId)[1] * newImageHeight / originalHeight;
-				boundingBoxes[i].style.left = newXPos;
+				let newXPos = originalBBSizes.get(rectId)[0] * newImageWidth / originalWidth;
+				let newYPos = originalBBSizes.get(rectId)[1] * newImageHeight / originalHeight;
+				boundingBoxes[i].style.left = newXPos.toString();
 				boundingBoxes[i].style.top = newYPos + document.getElementById("qaImageDiv").offsetTop;
+
 				//New SVG rectangle size.
-				newWidth = originalBBSizes.get(rectId)[2] * newImageWidth / originalWidth;
-				newHeight = originalBBSizes.get(rectId)[3] * newImageHeight / originalHeight;
+				let newWidth = originalBBSizes.get(rectId)[2] * newImageWidth / originalWidth;
+				let newHeight = originalBBSizes.get(rectId)[3] * newImageHeight / originalHeight;
+
 				//Assign new size to Div, SVG Canvas and SVG rectangle (in this order).
-				rectDiv = document.getElementById(boundingBoxes[i].id);
+				let rectDiv = document.getElementById(boundingBoxes[i].id);
 				rectDiv.setAttribute("width", newWidth + "px");
 				rectDiv.setAttribute("height", newHeight + "px");
 				rectDiv.childNodes[0].setAttribute("width", newWidth + "px");
 				rectDiv.childNodes[0].setAttribute("height", newHeight + "px");
-				rectangle = document.getElementById(rectId);
+
+				let rectangle = document.getElementById(rectId);
 				rectangle.setAttribute("width", newWidth + "px");
 				rectangle.setAttribute("height", newHeight + "px");
 			}
