@@ -22,11 +22,11 @@
 			<div id="mainInstructionsDiv">
 				<p>Your work <span class="redText">will get rejected</span> if you do not follow the instructions below.</p>
 				<ul>
-					<li>Provide an answer to the given questions.</li>
-					<li>The answers must be <span class="blueText">ONLY text found in the image</span>. The questions are usually answerable with one or two words that appear in the image. If “ten” is written in the image, <span class="redText">DO NOT change into "10" or edit the text </span>(e.g. if the scene text has a typo).</li>
+					<li>Provide an answer to the given question.</li>
+					<li>The answer must be <span class="blueText">ONLY text found in the image</span>. The question is usually answerable with one or two words that appear in the image. If “ten” is written in the image, <span class="redText">DO NOT change into "10" or edit the text </span>(even if the scene text has a typo).</li>
 					<li>If the question is ambiguous or you don't know the answer, <span class="blueText">provide your best guess</span>, always using words that appear in the image.</li>
 					<li>If you need to use words other than the ones that appear in the image to answer a question, then the question should NOT be answered, and you should <span class="blueText">write: "!" in the answer box</span>.</li>
-					<li>There might be some images that do not have any possible questions that satisfies above conditions (<span class="boldText">related with the text found in the image</span>). In those cases, you will be asked yes or no question.</li>
+<!--					<li>There might be some images that do not have any possible questions that satisfies above conditions (<span class="boldText">related with the text found in the image</span>). In those cases, you will be asked yes or no question.</li>-->
 				</ul>
 			</div>
 		</div>
@@ -87,9 +87,9 @@
 			//Necessary to specify for browsers that do not support Object.entries function.
 			if (!Object.entries) {
 				Object.entries = function( obj ){
-					var ownProps = Object.keys( obj );
-					i = ownProps.length;
-					resArray = new Array(i); // preallocate the Array
+					let ownProps = Object.keys( obj );
+					let i = ownProps.length;
+					let resArray = new Array(i); // preallocate the Array
 					while (i--) {
 						resArray[i] = [ownProps[i], obj[ownProps[i]]];
 					}
