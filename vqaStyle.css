@@ -42,7 +42,7 @@
 
 
 /* =============== Form Style =============== */
-#questionDiv
+#QuestionDiv
 {
     background: orange;
     grid-row-start: 1;
@@ -57,7 +57,7 @@
     margin-left: 10px;
 }
 
-#answerDiv
+#AnswerDiv
 {
     background: lightskyblue;
     grid-row-start: 2;
