@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#DataCollection2").load("https://rawgit.com/furkanbiten/TestRepository/master/instructionsHtmlFiles/instructions2.html");
+	$("#DataCollection2").load("https://raw.githack.com/rubenTito/AMT_ST-VQA/master/instructions.html");
 
 
 	// Instructions expand/collapse
