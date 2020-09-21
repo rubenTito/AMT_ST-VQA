@@ -314,8 +314,29 @@
 }
 
 
-#x{
-    display: flex;
+#triggerText
+{
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.panel-heading
+{
+    padding: 10px 0px;
+    background: #428bca;
+    border-bottom: 1px solid transparent;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.panel-body {
+    background-color: white;
+    position: absolute;
+    border-color: #428bca;
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: none;
+    display: grid;
 }
 
 #collapseTrigger{
@@ -323,6 +344,7 @@
   display: block; 
   text-decoration: none;
 }
+
 
 #submitButton{
   white-space: normal;
