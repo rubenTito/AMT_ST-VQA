@@ -33,7 +33,7 @@ function validateForm() {
 };
 
 $( document ).ready(function() {
-	submitButton.onclick = function(ev) {
+	/*submitButton.onclick = function(ev) {
 		q0Val = $("#question0").val();
 		q1Val = $("#question1").val();
 		q2Val = $("#question2").val();
@@ -57,7 +57,7 @@ $( document ).ready(function() {
 		    ev.preventDefault();
 		    ev.stopPropagation();
 		}
-	};
+	};*/
 
 	let q0Val = 0;
 	let q1Val = 0;
