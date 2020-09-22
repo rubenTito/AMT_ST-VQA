@@ -41,6 +41,18 @@ function validateForm() {
 		$("#question1").prop('required',false);
 		$("#answer1").prop('required',false);
 	}
+
+	// Get back to default required values to be sure someone do not write-delete the content and submit.
+	if ((!QA0isFilled) && (!QA1isFilled) && (!QA2isFilled)) {
+		$("#question0").prop('required',true);
+		$("#answer0").prop('required',true);
+
+		$("#question1").prop('required',true);
+		$("#answer1").prop('required',true);
+
+		$("#question2").prop('required',true);
+		$("#answer2").prop('required',true);
+	}
 };
 
 $( document ).ready(function() {
