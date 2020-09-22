@@ -77,6 +77,7 @@ $( document ).ready(function() {
 		a2Val = $("#answer2").val();
 
 		console.log(q0Val, q1Val, q2Val, a0Val, a1Val, a2Val)
+		alert(q0Val);
 
 		//If at least one question and its answer are filled, others are not required anymore.
 		QA0isFilled = (q0Val != "") && (a0Val != "");
