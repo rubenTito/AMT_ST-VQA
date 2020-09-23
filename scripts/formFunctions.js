@@ -115,9 +115,10 @@ function onNoIsCovidCheckboxChange() {
 };*/
 
 $( document ).ready(function() {
-	//$( ".questionInput, .answerInput" ).change(validateForm);
-	$("#isCovid, #isNoCovid").change(validateCheckboxes);
+	$( ".questionInput, .answerInput" ).change(validateForm);
+	
 	$("#isCovid").change(onIsCovidCheckboxChange);
+	$("#isNoCovid").change(onNoIsCovidCheckboxChange);
 
 	alert('Code updated 2');
 });
