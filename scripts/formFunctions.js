@@ -55,7 +55,41 @@ function validateForm() {
 	}
 };
 
-function validateCheckboxes() {
+
+function onIsCovidCheckboxChange() {
+	isCovid = $("#isCovid").prop('checked');
+	isNoCovid = $("#isNoCovid").prop('checked');
+
+	// If one of the checkboxes is already checked, the other should be unchecked, and then, not required.
+	if (isCovid) {
+		alert("Is Covid: ", isCovid);
+		$("#isNoCovid").prop('checked',false);
+		$("#isNoCovid").prop('required',false);
+
+	} else {
+		$("#isCovid").prop('required',true);
+		$("#isNoCovid").prop('required',true);
+	}
+};
+
+function onNoIsCovidCheckboxChange() {
+	isCovid = $("#isCovid").prop('checked');
+	isNoCovid = $("#isNoCovid").prop('checked');
+
+	// If one of the checkboxes is already checked, the other should be unchecked, and then, not required.
+	if (isNoCovid) {
+		alert("Is No Covid: ", isNoCovid);
+		$("#isCovid").prop('checked',false);
+		$("#isCovid").prop('required',false);
+
+	} else {
+		$("#isCovid").prop('required',true);
+		$("#isNoCovid").prop('required',true);
+	}
+};
+
+
+/*function validateCheckboxes() {
 	isCovid = $("#isCovid").prop('checked');
 	isNoCovid = $("#isNoCovid").prop('checked');
 
@@ -75,14 +109,15 @@ function validateCheckboxes() {
 	// Turn checkboxes required.
 	if (!isCovid && !isNoCovid) {
 		alert("Both negative!");
-		$("#isCovid").prop('required',false);
-		$("#isNoCovid").prop('required',false);
+		$("#isCovid").prop('required',true);
+		$("#isNoCovid").prop('required',true);
 	}
-};
+};*/
 
 $( document ).ready(function() {
-	$( ".questionInput, .answerInput" ).change(validateForm);
-	$( "#isCovid, #isNoCovid" ).change(validateCheckboxes);
+	//$( ".questionInput, .answerInput" ).change(validateForm);
+	$("#isCovid, #isNoCovid").change(validateCheckboxes);
+	$("#isCovid").change(onIsCovidCheckboxChange);
 
-	alert('Code updated');
+	alert('Code updated 2');
 });
