@@ -59,16 +59,15 @@ function validateCheckboxes() {
 	isCovid = $("#isCovid").prop('checked');
 	isNoCovid = $("#isNoCovid").prop('checked');
 
-	alert("Is Covid: ", isCovid);
-	alert("Is No Covid: ", isNoCovid);
-
 	// If one of the checkboxes is already checked, the other should be unchecked, and then, not required.
 	if (isCovid) {
+		alert("Is Covid: ", isCovid);
 		$("#isNoCovid").prop('checked',false);
 		$("#isNoCovid").prop('required',false);
 	}
 
 	if (isNoCovid) {
+		alert("Is No Covid: ", isNoCovid);
 		$("#isCovid").prop('checked',false);
 		$("#isCovid").prop('required',false);
 	}
@@ -83,4 +82,6 @@ function validateCheckboxes() {
 $( document ).ready(function() {
 	$( ".questionInput, .answerInput" ).change(validateForm);
 	$( "#isCovid, #isNoCovid" ).change(validateCheckboxes);
+
+	alert('Code updated');
 });
