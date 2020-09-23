@@ -74,6 +74,7 @@ function validateCheckboxes() {
 
 	// Turn checkboxes required.
 	if (!isCovid && !isNoCovid) {
+		alert("Both negative!");
 		$("#isCovid").prop('required',false);
 		$("#isNoCovid").prop('required',false);
 	}
