@@ -56,8 +56,8 @@ function validateForm() {
 };
 
 function validateCheckboxes() {
-	isCovid = $("#isCovid").val();
-	isNoCovid = $("#isNoCovid").val();
+	isCovid = $("#isCovid").prop('checked');
+	isNoCovid = $("#isNoCovid").prop('checked');
 
 	alert("Is Covid: ", isCovid);
 	alert("Is No Covid: ", isNoCovid);
