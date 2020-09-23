@@ -62,9 +62,11 @@ function onIsCovidCheckboxChange() {
 
 	// If one of the checkboxes is already checked, the other should be unchecked, and then, not required.
 	if (isCovid) {
-		alert("Is Covid: ", isCovid);
 		$("#isNoCovid").prop('checked',false);
 		$("#isNoCovid").prop('required',false);
+
+		$("#isCovid").prop('value', 'true');
+		$("#isNoCovid").prop('value', 'false');
 
 	} else {
 		$("#isCovid").prop('required',true);
@@ -78,9 +80,11 @@ function onNoIsCovidCheckboxChange() {
 
 	// If one of the checkboxes is already checked, the other should be unchecked, and then, not required.
 	if (isNoCovid) {
-		alert("Is No Covid: ", isNoCovid);
 		$("#isCovid").prop('checked',false);
 		$("#isCovid").prop('required',false);
+
+		$("#isCovid").prop('value', 'false');
+		$("#isNoCovid").prop('value', 'true');
 
 	} else {
 		$("#isCovid").prop('required',true);
@@ -88,37 +92,18 @@ function onNoIsCovidCheckboxChange() {
 	}
 };
 
-
-/*function validateCheckboxes() {
-	isCovid = $("#isCovid").prop('checked');
-	isNoCovid = $("#isNoCovid").prop('checked');
-
-	// If one of the checkboxes is already checked, the other should be unchecked, and then, not required.
-	if (isCovid) {
-		alert("Is Covid: ", isCovid);
-		$("#isNoCovid").prop('checked',false);
-		$("#isNoCovid").prop('required',false);
-	}
-
-	if (isNoCovid) {
-		alert("Is No Covid: ", isNoCovid);
-		$("#isCovid").prop('checked',false);
-		$("#isCovid").prop('required',false);
-	}
-
-	// Turn checkboxes required.
-	if (!isCovid && !isNoCovid) {
-		alert("Both negative!");
-		$("#isCovid").prop('required',true);
-		$("#isNoCovid").prop('required',true);
-	}
-};*/
-
 $( document ).ready(function() {
 	$( ".questionInput, .answerInput" ).change(validateForm);
-	
+
 	$("#isCovid").change(onIsCovidCheckboxChange);
 	$("#isNoCovid").change(onNoIsCovidCheckboxChange);
 
-	alert('Code updated 2');
+	alert('Code updated 3');
 });
+
+
+https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/
+
+
+https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/b84d6f6878630383ee50b978c5845d98564274b8/images/100_Comic/2271_25.jpg
+https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/b84d6f6878630383ee50b978c5845d98564274b8/images/VisualGenome_1/1591952.jpg
