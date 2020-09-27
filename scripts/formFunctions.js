@@ -95,15 +95,9 @@ function onNoIsCovidCheckboxChange() {
 $( document ).ready(function() {
 	$( ".questionInput, .answerInput" ).change(validateForm);
 
-	$("#isCovid").change(onIsCovidCheckboxChange);
-	$("#isNoCovid").change(onNoIsCovidCheckboxChange);
+	// Only when checkboxes are used!
+	// $("#isCovid").change(onIsCovidCheckboxChange);
+	// $("#isNoCovid").change(onNoIsCovidCheckboxChange);
 
 	alert('Code updated 3');
 });
-
-
-https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/
-
-
-https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/b84d6f6878630383ee50b978c5845d98564274b8/images/100_Comic/2271_25.jpg
-https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/b84d6f6878630383ee50b978c5845d98564274b8/images/VisualGenome_1/1591952.jpg
