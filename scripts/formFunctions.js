@@ -98,6 +98,4 @@ $( document ).ready(function() {
 	// Only when checkboxes are used!
 	// $("#isCovid").change(onIsCovidCheckboxChange);
 	// $("#isNoCovid").change(onNoIsCovidCheckboxChange);
-
-	alert('Code updated 3');
 });
