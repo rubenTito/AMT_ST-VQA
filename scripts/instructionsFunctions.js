@@ -47,7 +47,7 @@ function appendInstructions(project) {
 			$("#InstructionsList").append(instruction_html_code);
 		}
 		else {
-			console.log(instruction_html_code, instruction_project);
+			// console.log(instruction_html_code, instruction_project);
 		}
 	};
 
