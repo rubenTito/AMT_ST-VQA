@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#DataCollection2").load("https://raw.githack.com/rubenTito/AMT_ST-VQA/master/instructions.html");
+	// $("#DataCollection2").load("https://raw.githack.com/rubenTito/AMT_ST-VQA/master/instructions.html");
 
 
 	// Instructions expand/collapse
@@ -110,10 +110,6 @@ function appendInstructions(project) {
 		];
 		
 		example2_image = "https://raw.githack.com/rubenTito/AMT_ST-VQA/master/examples/comic_3686_9.jpg";			
-
-						
-
-						
 
 	} else {
 		console.log("Error during appending instructions with 'project' variable value. Expected 'covid' or 'comic' but '", project, "' received.");
