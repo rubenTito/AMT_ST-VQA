@@ -1,0 +1,163 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<link href="vqaStyle.css" rel="stylesheet" type="text/css" /> <!-- Development -->
+<!-- <link href="https://raw.githack.com/rubenTito/AMT_ST-VQA/master/vqaStyleV4.css" rel="stylesheet" type="text/css" /> --> <!-- Development -->
+<!-- https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/ab8325f317f80119c5d105e72cf904f53bb0b991/vqaStyle.css --> <!-- Production -->
+
+<div class="gridContainer">
+
+	<div id="instructionsDiv">
+		<div id="mainInstructionsDiv">
+			<p>Your work <span class="redText">will get rejected</span> if you do not follow the instructions below.</p>
+			<ul id="InstructionsList">
+				
+			</ul>
+
+			<p>We provide you two examples:</p>
+		</div>
+
+		<div id=examplesDiv>
+			<div class="panel-heading">
+				<a href="javascript:void(0);" id="collapseTrigger">
+					<strong id="triggerText" style="margin-left: 15px;">Examples</strong> 
+					<span class="collapse-text" id="collapse-text">(Click to expand)</span>
+				</a>
+			</div>
+
+			<div class="panel-body" id="instructionBody">
+				<div id="example1">
+					<p>Example 1: Allowed questions:</p>
+					<ul id=Ex1AllowedQuestionsList>
+
+					</ul>
+
+					
+					<p>And avoid the following ones:</p>
+
+					<ul id=Ex1AvoidQuestionsList>
+						
+					</ul>
+					
+					<img id="Ex1Image" class="exampleImage" src=""/>
+				</div>
+				
+				<div id="example2">
+					<p>Example 2: Allowed questions:</p>
+
+					<ul id="Ex2AllowedQuestionsList">
+						
+					</ul>
+
+					<p>And avoid the following ones:</p>
+
+					<ul id="Ex2AvoidQuestionsList">
+						
+					</ul>
+
+					<img id="Ex2Image" class="exampleImage" src=""/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Instructions -->
+
+    <div id="qaImageDiv">
+		<img id="qaImage" class="qaImage" src="" >
+	</div>
+
+	<div id="headerPanel">
+		<div id="wordsDiv" class="wordsDiv"> </div>
+	</div>
+	
+	<div id="formDiv">
+	    <crowd-form answer-format="flatten-objects">
+
+	    <div id="QADiv">
+    		<div id="QADiv0" class="QADivRow">
+    			<div class="questionInputDiv">
+	                <crowd-input id="question0" type="text" name="question0" class="questionInput" spellcheck="true" lang="en" placeholder='Type your question' required></crowd-input>
+    			</div>
+    
+    			<div class="answerInputDiv">
+	                <crowd-input id="answer0" type="text" name="answer0" class="answerInput" spellcheck="true" lang="en" placeholder='Type the answer' required></crowd-input>
+    			</div>
+    		</div>
+    		
+    		<div id="QADiv1" class="QADivRow">
+    			<div class="questionInputDiv">
+	                <crowd-input id="question1" type="text" name="question1" class="questionInput" spellcheck="true" lang="en" placeholder='Type your question' required></crowd-input>
+    			</div>
+    
+    			<div class="answerInputDiv">
+	                <crowd-input id="answer1" type="text" name="answer1" class="answerInput" spellcheck="true" lang="en" placeholder='Type the answer' required></crowd-input>
+    			</div>
+    		</div>
+    		
+    		<div id="QADiv0" class="QADivRow">
+    			<div class="questionInputDiv">
+	                <crowd-input id="question2" type="text" name="question2" class="questionInput" spellcheck="true" lang="en" placeholder='Type your question' required></crowd-input>
+    			</div>
+    
+    			<div class="answerInputDiv">
+	                <crowd-input id="answer2" type="text" name="answer2" class="answerInput" spellcheck="true" lang="en" placeholder='Type the answer' required></crowd-input>
+    			</div>
+    		</div>
+        </div>
+        </crowd-form>
+	</div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- Development --> 
+
+<script type="text/javascript" src="scripts/formFunctions.js"></script>
+<!-- <script src="https://raw.githack.com/rubenTito/AMT_ST-VQA/master/scripts/formFunctions.js"></script> --> <!-- Development -->
+<!-- <script src="https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/5ee1c7b7db76aa1e8bea704c7a5bc22b780639a8/scripts/formFunctions.js"></script> --> <!-- Production -->
+
+<script>
+    
+	function arraysEqual(_arr1, _arr2) {
+
+		if (!Array.isArray(_arr1) || ! Array.isArray(_arr2) || _arr1.length !== _arr2.length) {
+			return false;
+		}
+
+		var arr1 = _arr1.concat().sort();
+		var arr2 = _arr2.concat().sort();
+
+		for (var i = 0; i < arr1.length; i++) {
+			if (arr1[i] !== arr2[i]) {
+				return false;
+			}
+		}
+
+		return true;
+
+	}
+
+</script>
+
+<script type="text/javascript" src="scripts/drawFunctions.js"></script>
+<!-- <script type="text/javascript" src="https://raw.githack.com/rubenTito/AMT_ST-VQA/master/scripts/drawFunctions.js"></script> --> <!-- Development -->
+<!-- <script type="text/javascript" src="https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/5ee1c7b7db76aa1e8bea704c7a5bc22b780639a8/scripts/drawFunctions.js"></script> --> <!-- Production -->
+
+<script>
+	//plotImage("${img_url}");
+	plotImage("VisualGenome_1/1591952.jpg");
+</script> 
+
+<script type="text/javascript" src="scripts/instructionsFunctions.js"></script>
+<!--- <script type="text/javascript" src="https://raw.githack.com/rubenTito/AMT_ST-VQA/master/scripts/instructionsFunctions.js"></script> --> <!-- Development -->
+<!-- <script type="text/javascript" src="https://rawcdn.githack.com/rubenTito/AMT_ST-VQA/5ee1c7b7db76aa1e8bea704c7a5bc22b780639a8/scripts/instructionsFunctions.js"></script> --> <!-- Production -->
+
+<script>
+
+	$( window ).resize(function() {
+	    
+		//Get new image size
+		qaImage = document.getElementById("qaImage");
+		newImageWidth = qaImage.width;
+		newImageHeight = qaImage.height;
+	});
+</script> </htmlcontent></htmlquestion>
