@@ -10,13 +10,14 @@ function getFormValues() {
 	return [q0Val, q1Val, q2Val, a0Val, a1Val, a2Val];
 };
 
+
 function validateForm() {
 	[q0Val, q1Val, q2Val, a0Val, a1Val, a2Val] = getFormValues();
 
 	//If at least one question and its answer are filled, others are not required anymore.
 	QA0isFilled = (q0Val != "") && (a0Val != "");
-	QA1isFilled = (q1Val != "") || (a1Val != "");
-	QA2isFilled = (q2Val != "") || (a2Val != "");
+	QA1isFilled = (q1Val != "") && (a1Val != "");
+	QA2isFilled = (q2Val != "") && (a2Val != "");
 
 	if (QA0isFilled) {
 		$("#question1").prop('required',false);
@@ -74,6 +75,7 @@ function onIsCovidCheckboxChange() {
 	}
 };
 
+
 function onNoIsCovidCheckboxChange() {
 	isCovid = $("#isCovid").prop('checked');
 	isNoCovid = $("#isNoCovid").prop('checked');
@@ -92,10 +94,46 @@ function onNoIsCovidCheckboxChange() {
 	}
 };
 
+
+function limitAnswerMaxLength(maxlength) {
+	$("#answer0").prop("maxlength", maxlength);
+	$("#answer1").prop("maxlength", maxlength);
+	$("#answer2").prop("maxlength", maxlength);
+};
+
+
+function countWords() {
+	max_words_allowed = 6;
+	errorMessage = "This answer exceeds the maximum allowed words (" + max_words_allowed.toString() + ")";
+	answer_input_id = $(this).attr('id');
+	answer_value = $("#" + answer_input_id).val();
+
+	splitted_answer_value = answer_value.split(' ');
+	num_answer_words = splitted_answer_value.length;
+
+	if (num_answer_words > max_words_allowed) {
+		$("#" + answer_input_id).notify(errorMessage, "error");
+	}
+};
+
+
 $( document ).ready(function() {
-	$( ".questionInput, .answerInput" ).change(validateForm);
+	$(".questionInput, .answerInput").change(validateForm);
 
 	// Only when checkboxes are used!
 	// $("#isCovid").change(onIsCovidCheckboxChange);
 	// $("#isNoCovid").change(onNoIsCovidCheckboxChange);
+
+	/* Apart of the limitation of words. We limit also the number of characters so they can know they are exceeding (by much) the amount of words allowed. */
+	//This could be directly done in the HTML, but doing it like this allos uus to modify it on-the-fly and through a single variable
+	maxlength = 50;
+	limitAnswerMaxLength(maxlength);
+
+	/* Trying to limit the answer by words instead of characters.
+	$(".answerInput").change(countWords);
+
+	input_html = "<crowd-input id='validator' type='text' name='validator' class='validator'='Type your question' required></crowd-input>"
+	$('#QADiv').append(input_html);
+	$('#validator').hide();
+	*/
 });
